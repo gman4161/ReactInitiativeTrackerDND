@@ -18,16 +18,25 @@ export default function Home() {
     />
 
     <button onClick={() => {
-        setArtists([      //@ts-ignore
-          ...artists,   //@ts-ignore
+        setArtists([          //@ts-ignore
+          ...artists,         //@ts-ignore
           { id: nextId++, name: name }
         ]);
         setName("");
     }}>Add</button>
 
     <ul>
-      {artists.map(artist => (      //@ts-ignore
-        <li key={artist.id}>{artist.name}</li>
+      {artists.map(artist => (              //@ts-ignore
+        <li key={artist.id}>
+        <button                             //@ts-ignore
+          onClick={() => {
+            setArtists(artists.filter(s =>  //@ts-ignore
+              s.id != artist.id
+            ))
+          }}
+        >X</button>                       {/**@ts-ignore*/}
+          {artist.name+"\t\t\t"}
+        </li>
       ))}
     </ul>
 
