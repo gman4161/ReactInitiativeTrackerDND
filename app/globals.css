@@ -1,4 +1,4 @@
-/* @import "tailwindcss";
+@import "tailwindcss";
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -21,4 +21,10 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-} */
+}
+
+button #test:hover{
+  background-color: white;
+  border-radius: 5px;
+  transition: 10ms;
+}

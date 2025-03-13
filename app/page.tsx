@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import "tailwindcss";
 
 let nextId = 0;
 
@@ -33,7 +34,11 @@ export default function Home() {
   }
 
   return (<>
+  <main>
     <h1>Initiative Round {round}:</h1>
+
+    <input className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="your@mail.com"/>
+		<button id="test" className="px-8 rounded-r-lg bg-[#00FFFF]  text-gray-800 font-bold p-4 uppercase border-[#00FFFF] border-t border-b border-r">Subscribe</button>
 
     <ul>
       {/* The players list, iterates through each in array 'players' on change */}
@@ -59,7 +64,7 @@ export default function Home() {
               setPlayers(newArr)
             }}
           />                                    {/**@ts-ignore*/}
-          {player.name}
+          <p>{player.name}</p>
         </li>
       ))}
 
@@ -76,6 +81,6 @@ export default function Home() {
     </ul>
     <button onClick={() => {setRound(round+1); sortPlayers()}}>Next Round</button>
     <button onClick={() => setRound(1)}>Combat Complete</button>
-
+  </main>
   </>);
 }
