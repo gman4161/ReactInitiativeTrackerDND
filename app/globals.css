@@ -10,21 +10,37 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
 }
 
-button #test:hover{
-  background-color: white;
-  border-radius: 5px;
-  transition: 10ms;
+
+button {
+  background-color: aqua;
+}
+button:hover {
+  transition: all 100ms ease-in-out;
+  background-color: lime;
+  outline: 2px solid lime;
+}
+
+button#delete{
+  background-color: black;
+  color: red;
+}
+button#delete:hover {
+  transition: all 100ms ease-in-out;
+  background-color: red;
+  color: black;
+  outline: 2px solid red;
 }
